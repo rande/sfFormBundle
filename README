@@ -1,0 +1,24 @@
+README
+======
+
+Warning : This is just a proof of concept. 
+Test results : Failed 2/56 test scripts, 96.43% okay. 1/1384 subtests failed, 99.93% okay
+
+What is Symfony?
+----------------
+
+Symfony is a PHP 5.3 full-stack web framework. It is written with speed and
+flexibility in mind. It allows developers to built better and easy to maintain
+websites with PHP.
+
+Symfony can be used to develop all kind of websites, from your personal blog
+to high traffic ones like Dailymotion or Yahoo! Answers.
+
+What is FormBundle?
+-------------------
+
+FormBundle is a port (fork) of the sfForm framework provided by the symfony
+framework version 1.[2,3,4]
+
+more information : http://www.symfony-project.com
+
