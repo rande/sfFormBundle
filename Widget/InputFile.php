@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Bundle\FormBundle\Widget;
+namespace Bundle\sfFormBundle\Widget;
 
 /**
  * InputFile represents an upload HTML input tag.

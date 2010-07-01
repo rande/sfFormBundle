@@ -8,12 +8,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Bundle\FormBundle;
+namespace Bundle\sfFormBundle;
 
-use Bundle\FormBundle\Widget\Form as WidgetForm;
-use Bundle\FormBundle\Widget\Schema as WidgetSchema;
-use Bundle\FormBundle\Validator\Error as ValidatorError;
-use Bundle\FormBundle\Validator\ErrorSchema as ValidatorErrorSchema;
+use Bundle\sfFormBundle\Widget\Form as WidgetForm;
+use Bundle\sfFormBundle\Widget\Schema as WidgetSchema;
+use Bundle\sfFormBundle\Validator\Error as ValidatorError;
+use Bundle\sfFormBundle\Validator\ErrorSchema as ValidatorErrorSchema;
 
 
 /**
@@ -124,7 +124,7 @@ class FieldSchema extends Field implements \ArrayAccess, \Iterator, \Countable
 
       if ($widget instanceof WidgetSchema)
       {
-        $class = 'Bundle\\FormBundle\\FieldSchema';
+        $class = 'Bundle\\sfFormBundle\\FieldSchema';
 
         if ($error && !$error instanceof ValidatorErrorSchema)
         {
@@ -133,7 +133,7 @@ class FieldSchema extends Field implements \ArrayAccess, \Iterator, \Countable
       }
       else
       {
-        $class = 'Bundle\\FormBundle\\Field';
+        $class = 'Bundle\\sfFormBundle\\Field';
       }
 
       $this->fields[$name] = new $class($widget, $this, $name, isset($this->value[$name]) ? $this->value[$name] : null, $error);

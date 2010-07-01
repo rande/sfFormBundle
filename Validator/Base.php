@@ -1,8 +1,8 @@
 <?php
 
-namespace Bundle\FormBundle\Validator;
+namespace Bundle\sfFormBundle\Validator;
 
-use Bundle\FormBundle\Validator\Error;
+use Bundle\sfFormBundle\Validator\Error;
 use Symfony\Components\Yaml\Inline as YamlInline;
 
 /*

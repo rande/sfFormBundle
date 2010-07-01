@@ -1,6 +1,6 @@
 <?php
 
-namespace Bundle\FormBundle\Validator;
+namespace Bundle\sfFormBundle\Validator;
 
 use Symfony\Components\Yaml\Inline as YamlInline;
 

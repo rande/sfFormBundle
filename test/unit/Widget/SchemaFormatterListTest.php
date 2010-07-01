@@ -10,9 +10,9 @@
 
 require_once(dirname(__FILE__).'/../bootstrap.php');
 
-use Bundle\FormBundle\Widget\InputText;
-use Bundle\FormBundle\Widget\Schema;
-use Bundle\FormBundle\Widget\SchemaFormatterList;
+use Bundle\sfFormBundle\Widget\InputText;
+use Bundle\sfFormBundle\Widget\Schema;
+use Bundle\sfFormBundle\Widget\SchemaFormatterList;
 
 
 $t = new lime_test(2);

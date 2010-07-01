@@ -10,13 +10,13 @@
 
 require_once(dirname(__FILE__).'/../bootstrap.php');
 
-use Bundle\FormBundle\Widget\SelectRadio;
-use Bundle\FormBundle\Widget\Schema;
-use Bundle\FormBundle\Widget\SchemaFormatter;
-use Bundle\FormBundle\Widget\SchemaFormatterTable;
+use Bundle\sfFormBundle\Widget\SelectRadio;
+use Bundle\sfFormBundle\Widget\Schema;
+use Bundle\sfFormBundle\Widget\SchemaFormatter;
+use Bundle\sfFormBundle\Widget\SchemaFormatterTable;
 
-use Bundle\FormBundle\Tool\Callable;
-use Bundle\FormBundle\Tool\DomCssSelector;
+use Bundle\sfFormBundle\Tool\Callable;
+use Bundle\sfFormBundle\Tool\DomCssSelector;
 
 class FormFormatterStub extends SchemaFormatter
 {

@@ -10,9 +10,9 @@
 
 require_once(dirname(__FILE__).'/../bootstrap.php');
 
-use Bundle\FormBundle\Validator\Base;
-use Bundle\FormBundle\Validator\Error;
-use Bundle\FormBundle\Validator\ErrorSchema;
+use Bundle\sfFormBundle\Validator\Base;
+use Bundle\sfFormBundle\Validator\Error;
+use Bundle\sfFormBundle\Validator\ErrorSchema;
 
 
 $t = new lime_test(47);

@@ -1,6 +1,6 @@
 <?php
 
-namespace Bundle\FormBundle\Validator;
+namespace Bundle\sfFormBundle\Validator;
 
 /*
  * This file is part of the symfony package.
@@ -98,7 +98,7 @@ class FromDescription extends Decorator
         $i += strlen($match[0]);
         $rightField = $match[1];
 
-        $tokens[] = new FDToken('Bundle\\FormBundle\\Validator\\SchemaCompare', array($leftField, $operator, $rightField, $arguments[0], isset($arguments[1]) ? $arguments[1] : array()));
+        $tokens[] = new FDToken('Bundle\\sfFormBundle\\Validator\\SchemaCompare', array($leftField, $operator, $rightField, $arguments[0], isset($arguments[1]) ? $arguments[1] : array()));
       }
       else if (preg_match('/^(and|or)/i', substr($string, $i), $match))
       {
@@ -218,20 +218,20 @@ class FromDescription extends Decorator
     {
       switch (get_class($token))
       {
-        case 'Bundle\\FormBundle\\FDToken':
+        case 'Bundle\\sfFormBundle\\FDToken':
           $outputStack[] = $token;
           break;
-        case 'Bundle\\FormBundle\\FDTokenLeftBracket':
+        case 'Bundle\\sfFormBundle\\FDTokenLeftBracket':
           $operatorStack[] = $token;
           break;
-        case 'Bundle\\FormBundle\\FDTokenRightBracket':
+        case 'Bundle\\sfFormBundle\\FDTokenRightBracket':
           while (!$operatorStack[count($operatorStack) - 1] instanceof FDTokenLeftBracket)
           {
             $outputStack[] = array_pop($operatorStack);
           }
           array_pop($operatorStack);
           break;
-        case 'Bundle\\FormBundle\\FDTokenOperator':
+        case 'Bundle\\sfFormBundle\\FDTokenOperator':
           while (count($operatorStack) && $precedences[$token->__toString()] <= $precedences[$operatorStack[count($operatorStack) - 1]->__toString()])
           {
             $outputStack[] = array_pop($operatorStack);
@@ -350,7 +350,7 @@ class FDTokenOperator
   {
     $this->operator = $operator;
     $this->arguments = $arguments;
-    $this->class = 'or' == $operator ? 'Bundle\\FormBundle\\Validator\\OrOperator' : 'Bundle\\FormBundle\\Validator\\AndOperator';
+    $this->class = 'or' == $operator ? 'Bundle\\sfFormBundle\\Validator\\OrOperator' : 'Bundle\\sfFormBundle\\Validator\\AndOperator';
   }
 
   public function __toString()
@@ -362,8 +362,8 @@ class FDTokenOperator
   {
     return sprintf('new %s(array(%s, %s), %s)',
       $this->class,
-      in_array(get_class($tokenLeft), array('Bundle\\FormBundle\\Validator\\FDToken', 'Bundle\\FormBundle\\Validator\\FDTokenFilter')) ? $tokenLeft->asPhp() : $tokenLeft,
-      in_array(get_class($tokenRight), array('Bundle\\FormBundle\\Validator\\FDToken', 'Bundle\\FormBundle\\Validator\\FDTokenFilter')) ? $tokenRight->asPhp() : $tokenRight,
+      in_array(get_class($tokenLeft), array('Bundle\\sfFormBundle\\Validator\\FDToken', 'Bundle\\sfFormBundle\\Validator\\FDTokenFilter')) ? $tokenLeft->asPhp() : $tokenLeft,
+      in_array(get_class($tokenRight), array('Bundle\\sfFormBundle\\Validator\\FDToken', 'Bundle\\sfFormBundle\\Validator\\FDTokenFilter')) ? $tokenRight->asPhp() : $tokenRight,
       implode(', ', array_map(create_function('$a', 'return var_export($a, true);'), $this->arguments))
     );
   }
@@ -373,8 +373,8 @@ class FDTokenOperator
     $reflection = new \ReflectionClass($this->class);
 
     $validators = array(
-      in_array(get_class($tokenLeft), array('Bundle\\FormBundle\\Validator\\FDToken', 'Bundle\\FormBundle\\Validator\\FDTokenFilter')) ? $tokenLeft->getValidator() : $tokenLeft,
-      in_array(get_class($tokenRight), array('Bundle\\FormBundle\\Validator\\FDToken', 'Bundle\\FormBundle\\Validator\\FDTokenFilter')) ? $tokenRight->getValidator() : $tokenRight,
+      in_array(get_class($tokenLeft), array('Bundle\\sfFormBundle\\Validator\\FDToken', 'Bundle\\sfFormBundle\\Validator\\FDTokenFilter')) ? $tokenLeft->getValidator() : $tokenLeft,
+      in_array(get_class($tokenRight), array('Bundle\\sfFormBundle\\Validator\\FDToken', 'Bundle\\sfFormBundle\\Validator\\FDTokenFilter')) ? $tokenRight->getValidator() : $tokenRight,
     );
 
     return $reflection->newInstanceArgs(array_merge(array($validators), $this->arguments));

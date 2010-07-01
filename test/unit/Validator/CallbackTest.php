@@ -10,10 +10,10 @@
 
 require_once(dirname(__FILE__).'/../bootstrap.php');
 
-use Bundle\FormBundle\Validator\Callback;
-use Bundle\FormBundle\Validator\Error;
-use Bundle\FormBundle\Validator\ErrorSchema;
-// use Bundle\FormBundle\Tool\Callable;
+use Bundle\sfFormBundle\Validator\Callback;
+use Bundle\sfFormBundle\Validator\Error;
+use Bundle\sfFormBundle\Validator\ErrorSchema;
+// use Bundle\sfFormBundle\Tool\Callable;
 
 $t = new lime_test(7);
 
@@ -67,4 +67,4 @@ $t->is($v->clean('foo'), '*foo*fabien-symfony', '->configure() can take an argum
 // ->asString()
 $t->diag('->asString()');
 $v = new Callback(array('callback' => 'clean_test'));
-$t->is($v->asString(), 'Bundle\FormBundle\Validator\Callback({ callback: clean_test })', '->asString() returns a string representation of the validator');
+$t->is($v->asString(), 'Bundle\sfFormBundle\Validator\Callback({ callback: clean_test })', '->asString() returns a string representation of the validator');

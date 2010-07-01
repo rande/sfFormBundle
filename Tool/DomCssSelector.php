@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Bundle\FormBundle\Tool;
+namespace Bundle\sfFormBundle\Tool;
 
 /**
  * sfDomCssSelector allows to navigate a DOM with CSS selector.

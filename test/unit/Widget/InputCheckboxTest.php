@@ -10,7 +10,7 @@
 
 require_once(dirname(__FILE__).'/../bootstrap.php');
 
-use Bundle\FormBundle\Widget\InputCheckbox;
+use Bundle\sfFormBundle\Widget\InputCheckbox;
 
 $t = new lime_test(7);
 

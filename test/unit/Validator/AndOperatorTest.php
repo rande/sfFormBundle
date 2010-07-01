@@ -10,10 +10,10 @@
 
 require_once(dirname(__FILE__).'/../bootstrap.php');
 
-use Bundle\FormBundle\Validator\String;
-use Bundle\FormBundle\Validator\AndOperator;
-use Bundle\FormBundle\Validator\Error;
-use Bundle\FormBundle\Validator\ErrorSchema;
+use Bundle\sfFormBundle\Validator\String;
+use Bundle\sfFormBundle\Validator\AndOperator;
+use Bundle\sfFormBundle\Validator\Error;
+use Bundle\sfFormBundle\Validator\ErrorSchema;
 
 
 $t = new lime_test(25);
@@ -129,9 +129,9 @@ $t->diag('->asString()');
 $v1 = new String(array('max_length' => 3));
 $v2 = new String(array('min_length' => 3));
 $v = new AndOperator(array($v1, $v2));
-$t->is($v->asString(), "(\n  Bundle\FormBundle\Validator\String({ max_length: 3 })\n  and\n  Bundle\FormBundle\Validator\String({ min_length: 3 })\n)"
+$t->is($v->asString(), "(\n  Bundle\sfFormBundle\Validator\String({ max_length: 3 })\n  and\n  Bundle\sfFormBundle\Validator\String({ min_length: 3 })\n)"
 , '->asString() returns a string representation of the validator');
 
 $v = new AndOperator(array($v1, $v2), array(), array('required' => 'This is required.'));
-$t->is($v->asString(), "(\n  Bundle\FormBundle\Validator\String({ max_length: 3 })\n  and({}, { required: 'This is required.' })\n  Bundle\FormBundle\Validator\String({ min_length: 3 })\n)" 
+$t->is($v->asString(), "(\n  Bundle\sfFormBundle\Validator\String({ max_length: 3 })\n  and({}, { required: 'This is required.' })\n  Bundle\sfFormBundle\Validator\String({ min_length: 3 })\n)" 
 , '->asString() returns a string representation of the validator');

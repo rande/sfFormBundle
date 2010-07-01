@@ -8,9 +8,9 @@
  * file that was distributed with this source code.
  */
  
-namespace Bundle\FormBundle\Widget;
+namespace Bundle\sfFormBundle\Widget;
 
-use Bundle\FormBundle\Validator\ErrorSchema;
+use Bundle\sfFormBundle\Validator\ErrorSchema;
 
 /**
  * sfWidgetFormSchema represents an array of fields.
@@ -233,7 +233,7 @@ class Schema extends Form implements \ArrayAccess
 
     if (!isset($this->formFormatters[$name]))
     {
-      $class = 'Bundle\\FormBundle\\Widget\\SchemaFormatter'.ucfirst($name);
+      $class = 'Bundle\\sfFormBundle\\Widget\\SchemaFormatter'.ucfirst($name);
 
       if (!class_exists($class))
       {

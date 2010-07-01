@@ -10,7 +10,7 @@
 
 require_once(dirname(__FILE__).'/../bootstrap.php');
 
-use Bundle\FormBundle\Validator\Pass;
+use Bundle\sfFormBundle\Validator\Pass;
 
 $t = new lime_test(2);
 

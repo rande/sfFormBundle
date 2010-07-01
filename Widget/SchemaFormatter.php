@@ -8,9 +8,9 @@
  * file that was distributed with this source code.
  */
  
-namespace Bundle\FormBundle\Widget;
+namespace Bundle\sfFormBundle\Widget;
 
-use Bundle\FormBundle\Tool\Callable;
+use Bundle\sfFormBundle\Tool\Callable;
 
 /**
  * sfWidgetFormSchemaFormatter allows to format a form schema with HTML formats.
@@ -240,7 +240,7 @@ abstract class SchemaFormatter
       }
       else
       {
-        if ($error instanceof Bundle\FormBundle\Validator\Error)
+        if ($error instanceof Bundle\sfFormBundle\Validator\Error)
         {
           $err = $this->translate($error->getMessageFormat(), $error->getArguments());
         }

@@ -13,9 +13,10 @@ require_once $_src_path.'/Bundle/Lime2Bundle/LimeAutoloader.php';
 LimeAutoloader::enableLegacyMode();
 LimeAutoloader::register();
 
-require_once $_src_path.'/vendor/symfony/src/Symfony/Foundation/ClassLoader.php';
-$loader = new Symfony\Foundation\ClassLoader();
-$loader->registerNamespace('Symfony', $_src_path.'/vendor/symfony/src');
+require_once $_src_path.'/src/Symfony/src/Symfony/Foundation/UniversalClassLoader.php';
+$loader = new Symfony\Foundation\UniversalClassLoader();
+
+$loader->registerNamespace('Symfony', $_src_path.'/src/Symfony/src');
 $loader->registerNamespace('Bundle', $_src_path);
 $loader->register();
 

@@ -10,10 +10,10 @@
 
 require_once(dirname(__FILE__).'/../bootstrap.php');
 
-use Bundle\FormBundle\Validator\CSRFToken;
-use Bundle\FormBundle\Validator\Error;
-use Bundle\FormBundle\Validator\ErrorSchema;
-use Bundle\FormBundle\Tool\Callable;
+use Bundle\sfFormBundle\Validator\CSRFToken;
+use Bundle\sfFormBundle\Validator\Error;
+use Bundle\sfFormBundle\Validator\ErrorSchema;
+use Bundle\sfFormBundle\Tool\Callable;
 
 $t = new lime_test(5);
 
@@ -49,4 +49,4 @@ catch (Error $e)
 
 // ->asString()
 $t->diag('->asString()');
-$t->is($v->asString(), 'Bundle\FormBundle\Validator\CSRFToken({ token: symfony })', '->asString() returns a string representation of the validator');
+$t->is($v->asString(), 'Bundle\sfFormBundle\Validator\CSRFToken({ token: symfony })', '->asString() returns a string representation of the validator');

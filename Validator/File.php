@@ -1,6 +1,6 @@
 <?php
 
-namespace Bundle\FormBundle\Validator;
+namespace Bundle\sfFormBundle\Validator;
 
 /*
  * This file is part of the symfony package.
@@ -74,7 +74,7 @@ class File extends Base
         'image/x-png',
         'image/gif',
     )));
-    $this->addOption('validated_file_class', 'Bundle\\FormBundle\\Validator\\ValidatedFile');
+    $this->addOption('validated_file_class', 'Bundle\\sfFormBundle\\Validator\\ValidatedFile');
     $this->addOption('path', null);
 
     $this->addMessage('max_size', 'File is too large (maximum is %max_size% bytes).');

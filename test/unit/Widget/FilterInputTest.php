@@ -10,11 +10,11 @@
 
 require_once(dirname(__FILE__).'/../bootstrap.php');
 
-use Bundle\FormBundle\Widget\SchemaFormatter;
-use Bundle\FormBundle\Widget\Schema;
-use Bundle\FormBundle\Widget\FilterInput;
+use Bundle\sfFormBundle\Widget\SchemaFormatter;
+use Bundle\sfFormBundle\Widget\Schema;
+use Bundle\sfFormBundle\Widget\FilterInput;
 
-use Bundle\FormBundle\Tool\DomCssSelector;
+use Bundle\sfFormBundle\Tool\DomCssSelector;
 
 class FormFormatterStub extends SchemaFormatter
 {

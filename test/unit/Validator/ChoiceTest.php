@@ -10,10 +10,10 @@
 
 require_once(dirname(__FILE__).'/../bootstrap.php');
 
-use Bundle\FormBundle\Validator\Choice;
-use Bundle\FormBundle\Validator\Error;
-use Bundle\FormBundle\Validator\ErrorSchema;
-use Bundle\FormBundle\Tool\Callable;
+use Bundle\sfFormBundle\Validator\Choice;
+use Bundle\sfFormBundle\Validator\Error;
+use Bundle\sfFormBundle\Validator\ErrorSchema;
+use Bundle\sfFormBundle\Tool\Callable;
 
 $t = new lime_test(13);
 
@@ -55,7 +55,7 @@ catch (Error $e)
 
 // ->asString()
 $t->diag('->asString()');
-$t->is($v->asString(), 'Bundle\FormBundle\Validator\Choice({ choices: [foo, bar] })', '->asString() returns a string representation of the validator');
+$t->is($v->asString(), 'Bundle\sfFormBundle\Validator\Choice({ choices: [foo, bar] })', '->asString() returns a string representation of the validator');
 
 // choices as a callable
 $t->diag('choices as a callable');

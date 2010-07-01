@@ -8,9 +8,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Bundle\FormBundle\Widget;
+namespace Bundle\sfFormBundle\Widget;
 
-use Bundle\FormBundle\Tool\Callable; 
+use Bundle\sfFormBundle\Tool\Callable; 
 
 /**
  * Choice represents a choice widget.
@@ -127,7 +127,7 @@ class Choice extends ChoiceBase
     if (!$class = $this->getOption('renderer_class'))
     {
       $type = !$this->getOption('expanded') ? '' : ($this->getOption('multiple') ? 'checkbox' : 'radio');
-      $class = sprintf('Bundle\\FormBundle\\Widget\\Select%s', ucfirst($type));
+      $class = sprintf('Bundle\\sfFormBundle\\Widget\\Select%s', ucfirst($type));
     }
 
     return new $class(array_merge(array('choices' => new Callable(array($this, 'getChoices'))), $this->options['renderer_options']), $this->getAttributes());

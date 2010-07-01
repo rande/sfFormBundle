@@ -10,10 +10,10 @@
 
 require_once(dirname(__FILE__).'/../bootstrap.php');
 
-use Bundle\FormBundle\Validator\SchemaFilter;
-use Bundle\FormBundle\Validator\String;
-use Bundle\FormBundle\Validator\Error;
-use Bundle\FormBundle\Validator\ErrorSchema;
+use Bundle\sfFormBundle\Validator\SchemaFilter;
+use Bundle\sfFormBundle\Validator\String;
+use Bundle\sfFormBundle\Validator\Error;
+use Bundle\sfFormBundle\Validator\ErrorSchema;
 
 $t = new lime_test(6);
 

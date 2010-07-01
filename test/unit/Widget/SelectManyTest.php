@@ -10,7 +10,7 @@
 
 require_once(dirname(__FILE__).'/../bootstrap.php');
 
-use Bundle\FormBundle\Widget\SelectMany;
+use Bundle\sfFormBundle\Widget\SelectMany;
 
 $t = new lime_test(1);
 

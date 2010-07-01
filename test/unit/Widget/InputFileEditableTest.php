@@ -10,14 +10,14 @@
 
 require_once(dirname(__FILE__).'/../bootstrap.php');
 
-use Bundle\FormBundle\Widget\InputFileEditable;
-use Bundle\FormBundle\Widget\SchemaFormatter;
-use Bundle\FormBundle\Widget\Widget;
-use Bundle\FormBundle\Widget\Schema;
-use Bundle\FormBundle\Widget\FilterDate;
+use Bundle\sfFormBundle\Widget\InputFileEditable;
+use Bundle\sfFormBundle\Widget\SchemaFormatter;
+use Bundle\sfFormBundle\Widget\Widget;
+use Bundle\sfFormBundle\Widget\Schema;
+use Bundle\sfFormBundle\Widget\FilterDate;
 
-use Bundle\FormBundle\Tool\Callable;
-use Bundle\FormBundle\Tool\DomCssSelector;
+use Bundle\sfFormBundle\Tool\Callable;
+use Bundle\sfFormBundle\Tool\DomCssSelector;
 
 class FormFormatterStub extends SchemaFormatter
 {

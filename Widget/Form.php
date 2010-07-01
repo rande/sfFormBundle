@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Bundle\FormBundle\Widget;
+namespace Bundle\sfFormBundle\Widget;
 
 /**
  * sfWidgetForm is the base class for all form widgets.

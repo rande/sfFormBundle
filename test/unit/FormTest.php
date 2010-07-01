@@ -10,27 +10,27 @@
 
 require_once(dirname(__FILE__).'/bootstrap.php');
 
-use Bundle\FormBundle\Form;
-use Bundle\FormBundle\Field;
-use Bundle\FormBundle\FieldSchema;
+use Bundle\sfFormBundle\Form;
+use Bundle\sfFormBundle\Field;
+use Bundle\sfFormBundle\FieldSchema;
 
-use Bundle\FormBundle\Widget\Form as WidgetForm;
-use Bundle\FormBundle\Widget\Widget as Widget;
-use Bundle\FormBundle\Widget\Schema as WidgetSchema;
-use Bundle\FormBundle\Widget\InputText as WidgetInputText;
-use Bundle\FormBundle\Widget\InputHidden as WidgetInputHidden;
-use Bundle\FormBundle\Widget\InputFile as WidgetInputFile;
-use Bundle\FormBundle\Widget\SchemaFormatterList as WidgetSchemaFormatterList;
-use Bundle\FormBundle\Widget\Textarea as WidgetTextarea;
+use Bundle\sfFormBundle\Widget\Form as WidgetForm;
+use Bundle\sfFormBundle\Widget\Widget as Widget;
+use Bundle\sfFormBundle\Widget\Schema as WidgetSchema;
+use Bundle\sfFormBundle\Widget\InputText as WidgetInputText;
+use Bundle\sfFormBundle\Widget\InputHidden as WidgetInputHidden;
+use Bundle\sfFormBundle\Widget\InputFile as WidgetInputFile;
+use Bundle\sfFormBundle\Widget\SchemaFormatterList as WidgetSchemaFormatterList;
+use Bundle\sfFormBundle\Widget\Textarea as WidgetTextarea;
 
 
-use Bundle\FormBundle\Validator\Error as ValidatorError;
-use Bundle\FormBundle\Validator\String as ValidatorString;
-use Bundle\FormBundle\Validator\Schema as ValidatorSchema;
-use Bundle\FormBundle\Validator\ErrorSchema as ValidatorErrorSchema;
-use Bundle\FormBundle\Validator\Pass as ValidatorPass;
-use Bundle\FormBundle\Validator\File as ValidatorFile;
-use Bundle\FormBundle\Validator\Integer as ValidatorInteger;
+use Bundle\sfFormBundle\Validator\Error as ValidatorError;
+use Bundle\sfFormBundle\Validator\String as ValidatorString;
+use Bundle\sfFormBundle\Validator\Schema as ValidatorSchema;
+use Bundle\sfFormBundle\Validator\ErrorSchema as ValidatorErrorSchema;
+use Bundle\sfFormBundle\Validator\Pass as ValidatorPass;
+use Bundle\sfFormBundle\Validator\File as ValidatorFile;
+use Bundle\sfFormBundle\Validator\Integer as ValidatorInteger;
 
 
 
@@ -700,11 +700,11 @@ $list->bind(array(
   ),
 ));
 
-$t->isa_ok($list['items'][0]->getError(), 'Bundle\FormBundle\Validator\ErrorSchema', '"Bundle\FormBundle\Validator\ErrorSchema" is given an error schema when an extra embedded form is bound');
+$t->isa_ok($list['items'][0]->getError(), 'Bundle\sfFormBundle\Validator\ErrorSchema', '"Bundle\sfFormBundle\Validator\ErrorSchema" is given an error schema when an extra embedded form is bound');
 
 // does this trigger a fatal error?
 $list['items']->render();
-$t->pass('"Bundle\FormBundle\Validator\ErrorSchema" renders when an extra embedded form is bound');
+$t->pass('"Bundle\sfFormBundle\Validator\ErrorSchema" renders when an extra embedded form is bound');
 
 // ->getEmbeddedForms()
 $t->diag('->getEmbeddedForms()');
@@ -906,10 +906,10 @@ $t->is(array_keys($widgetSchema->getFields()), array('a', 'b', 'c', 'd'), 'merge
 $t->is(array_keys($validatorSchema->getFields()), array('a', 'b', 'c', 'd'), 'mergeForms() merges the correct validators');
 $t->is($widgetSchema->getLabels(), array('a' => '1_a', 'b' => '1_b', 'c' => '2_c', 'd' => '2_d'), 'mergeForm() merges labels correctly');
 $t->is($widgetSchema->getHelps(), array('a' => '1_a', 'b' => '1_b', 'c' => '2_c', 'd' => '2_d'), 'mergeForm() merges helps correctly');
-$t->isa_ok($widgetSchema['c'], 'Bundle\\FormBundle\\Widget\\Textarea', 'mergeForm() overrides original form widget');
-$t->isa_ok($validatorSchema['c'], 'Bundle\\FormBundle\\Validator\\Pass', 'mergeForm() overrides original form validator');
-$t->isa_ok($validatorSchema->getPreValidator(), 'Bundle\\FormBundle\\Validator\\Pass', 'mergeForm() merges pre validator');
-$t->isa_ok($validatorSchema->getPostValidator(), 'Bundle\\FormBundle\\Validator\\Pass', 'mergeForm() merges post validator');
+$t->isa_ok($widgetSchema['c'], 'Bundle\\sfFormBundle\\Widget\\Textarea', 'mergeForm() overrides original form widget');
+$t->isa_ok($validatorSchema['c'], 'Bundle\\sfFormBundle\\Validator\\Pass', 'mergeForm() overrides original form validator');
+$t->isa_ok($validatorSchema->getPreValidator(), 'Bundle\\sfFormBundle\\Validator\\Pass', 'mergeForm() merges pre validator');
+$t->isa_ok($validatorSchema->getPostValidator(), 'Bundle\\sfFormBundle\\Validator\\Pass', 'mergeForm() merges post validator');
 
 try
 {

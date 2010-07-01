@@ -10,18 +10,18 @@
 
 require_once(dirname(__FILE__).'/../bootstrap.php');
 
-use Bundle\FormBundle\Widget\InputText;
-use Bundle\FormBundle\Widget\InputFile;
-use Bundle\FormBundle\Widget\InputHidden;
-use Bundle\FormBundle\Widget\Schema;
-use Bundle\FormBundle\Widget\Widget;
-use Bundle\FormBundle\Widget\Form;
-use Bundle\FormBundle\Widget\SchemaDecorator;
-use Bundle\FormBundle\Widget\SchemaFormatter;
-use Bundle\FormBundle\Widget\SchemaFormatterTable;
-use Bundle\FormBundle\Widget\SchemaFormatterList;
+use Bundle\sfFormBundle\Widget\InputText;
+use Bundle\sfFormBundle\Widget\InputFile;
+use Bundle\sfFormBundle\Widget\InputHidden;
+use Bundle\sfFormBundle\Widget\Schema;
+use Bundle\sfFormBundle\Widget\Widget;
+use Bundle\sfFormBundle\Widget\Form;
+use Bundle\sfFormBundle\Widget\SchemaDecorator;
+use Bundle\sfFormBundle\Widget\SchemaFormatter;
+use Bundle\sfFormBundle\Widget\SchemaFormatterTable;
+use Bundle\sfFormBundle\Widget\SchemaFormatterList;
 
-use Bundle\FormBundle\Tool\Callable;
+use Bundle\sfFormBundle\Tool\Callable;
 
 
 $t = new lime_test(95);
@@ -104,14 +104,14 @@ $t->is($w->getPositions(), array('w1'), 'Schema implements the \ArrayAccess inte
 $t->diag('->addFormFormatter() ->setFormFormatterName() ->getFormFormatterName() ->getFormFormatter() ->getFormFormatters()');
 $w = new Schema(array('w1' => $w1));
 
-$t->is(get_class($w->getFormFormatter()), 'Bundle\FormBundle\Widget\SchemaFormatterTable', '->getFormFormatter() returns a sfWidgetSchemaFormatter object');
+$t->is(get_class($w->getFormFormatter()), 'Bundle\sfFormBundle\Widget\SchemaFormatterTable', '->getFormFormatter() returns a sfWidgetSchemaFormatter object');
 
 $w->addFormFormatter('custom', $customFormatter = new SchemaFormatterList($w));
 $w->setFormFormatterName('custom');
-$t->is(get_class($w->getFormFormatter()), 'Bundle\FormBundle\Widget\SchemaFormatterList', '->addFormFormatter() associates a name with a sfWidgetSchemaFormatter object');
+$t->is(get_class($w->getFormFormatter()), 'Bundle\sfFormBundle\Widget\SchemaFormatterList', '->addFormFormatter() associates a name with a sfWidgetSchemaFormatter object');
 
 $w->setFormFormatterName('list');
-$t->is(get_class($w->getFormFormatter()), 'Bundle\FormBundle\Widget\SchemaFormatterList', '->setFormFormatterName() set the names of the formatter to use when rendering');
+$t->is(get_class($w->getFormFormatter()), 'Bundle\sfFormBundle\Widget\SchemaFormatterList', '->setFormFormatterName() set the names of the formatter to use when rendering');
 
 $w->setFormFormatterName('nonexistant');
 try
@@ -468,11 +468,11 @@ foreach ($f1 as $key => $formFormatter)
 // setDefaultFormFormatterName()
 $t->diag('setDefaultFormFormatterName()');
 $w = new Schema(array('w1' => $w1, 'w2' => $w2));
-$t->isa_ok($w->getFormFormatter(), 'Bundle\FormBundle\Widget\SchemaFormatterTable', 'setDefaultFormFormatterName() has the "SchemaFormatterTable" form formatter by default');
+$t->isa_ok($w->getFormFormatter(), 'Bundle\sfFormBundle\Widget\SchemaFormatterTable', 'setDefaultFormFormatterName() has the "SchemaFormatterTable" form formatter by default');
 
 Schema::setDefaultFormFormatterName('list');
 $w = new Schema(array('w1' => $w1, 'w2' => $w2));
-$t->isa_ok($w->getFormFormatter(), 'Bundle\FormBundle\Widget\SchemaFormatterList', 'setDefaultFormFormatterName() changes the default form formatter name correctly');
+$t->isa_ok($w->getFormFormatter(), 'Bundle\sfFormBundle\Widget\SchemaFormatterList', 'setDefaultFormFormatterName() changes the default form formatter name correctly');
 
 class MyWidget extends Form
 {

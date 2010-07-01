@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
  
-namespace Bundle\FormBundle\Tool;
+namespace Bundle\sfFormBundle\Tool;
 
 /**
  * sfToolkit provides basic utility methods.

@@ -8,9 +8,9 @@
  * file that was distributed with this source code.
  */
  
-namespace Bundle\FormBundle\Widget;
+namespace Bundle\sfFormBundle\Widget;
 
-use Bundle\FormBundle\Tool\Callable; 
+use Bundle\sfFormBundle\Tool\Callable; 
 
 
 /**

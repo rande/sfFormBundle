@@ -10,12 +10,12 @@
 
 require_once(dirname(__FILE__).'/../bootstrap.php');
 
-use Bundle\FormBundle\Widget\InputText;
-use Bundle\FormBundle\Widget\Schema;
-use Bundle\FormBundle\Widget\SchemaFormatter;
-use Bundle\FormBundle\Widget\SchemaFormatterTable;
+use Bundle\sfFormBundle\Widget\InputText;
+use Bundle\sfFormBundle\Widget\Schema;
+use Bundle\sfFormBundle\Widget\SchemaFormatter;
+use Bundle\sfFormBundle\Widget\SchemaFormatterTable;
 
-use Bundle\FormBundle\Tool\Callable;
+use Bundle\sfFormBundle\Tool\Callable;
 
 $t = new lime_test(28);
 
@@ -103,7 +103,7 @@ MyFormatter::setTranslationCallable('my__');
 $t->is(MyFormatter::getTranslationCallable(), 'my__', 'get18nCallable() retrieves i18n callable correctly');
 
 MyFormatter::setTranslationCallable(new Callable('my__'));
-$t->isa_ok(MyFormatter::getTranslationCallable(), 'Bundle\\FormBundle\\Tool\\Callable', 'get18nCallable() retrieves i18n Callable correctly');
+$t->isa_ok(MyFormatter::getTranslationCallable(), 'Bundle\\sfFormBundle\\Tool\\Callable', 'get18nCallable() retrieves i18n Callable correctly');
 
 try
 {

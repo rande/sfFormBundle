@@ -10,7 +10,7 @@
 
 require_once(dirname(__FILE__).'/../bootstrap.php');
 
-use Bundle\FormBundle\Widget\TextArea;
+use Bundle\sfFormBundle\Widget\TextArea;
 
 $t = new lime_test(4);
 

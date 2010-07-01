@@ -10,11 +10,11 @@
 
 require_once(dirname(__FILE__).'/../bootstrap.php');
 
-use Bundle\FormBundle\Widget\Widget;
-use Bundle\FormBundle\Widget\DateRange;
-use Bundle\FormBundle\Widget\Schema;
-use Bundle\FormBundle\Widget\SchemaFormatter;
-use Bundle\FormBundle\Tool\Callable;
+use Bundle\sfFormBundle\Widget\Widget;
+use Bundle\sfFormBundle\Widget\DateRange;
+use Bundle\sfFormBundle\Widget\Schema;
+use Bundle\sfFormBundle\Widget\SchemaFormatter;
+use Bundle\sfFormBundle\Tool\Callable;
 
 
 class FormFormatterMock extends SchemaFormatter

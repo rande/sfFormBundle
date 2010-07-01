@@ -10,13 +10,13 @@
 
 require_once(dirname(__FILE__).'/../bootstrap.php');
 
-use Bundle\FormBundle\Validator\ValidatedFile;
-use Bundle\FormBundle\Validator\File;
-use Bundle\FormBundle\Validator\Date;
-use Bundle\FormBundle\Validator\Error;
-use Bundle\FormBundle\Validator\ErrorSchema;
+use Bundle\sfFormBundle\Validator\ValidatedFile;
+use Bundle\sfFormBundle\Validator\File;
+use Bundle\sfFormBundle\Validator\Date;
+use Bundle\sfFormBundle\Validator\Error;
+use Bundle\sfFormBundle\Validator\ErrorSchema;
 
-use Bundle\FormBundle\Tool\Toolkit;
+use Bundle\sfFormBundle\Tool\Toolkit;
 
 $t = new lime_test(69);
 

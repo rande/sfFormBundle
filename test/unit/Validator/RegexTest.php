@@ -10,10 +10,10 @@
 
 require_once(dirname(__FILE__).'/../bootstrap.php');
 
-use Bundle\FormBundle\Validator\Regex;
-use Bundle\FormBundle\Validator\Error;
+use Bundle\sfFormBundle\Validator\Regex;
+use Bundle\sfFormBundle\Validator\Error;
 
-use Bundle\FormBundle\Tool\Callable;
+use Bundle\sfFormBundle\Tool\Callable;
 
 function generate_regex()
 {
@@ -83,7 +83,7 @@ catch (Error $e)
 $t->diag('->asString()');
 
 $v = new Regex(array('pattern' => '/^[0-9]+$/', 'must_match' => false));
-$t->is($v->asString(), 'Bundle\FormBundle\Validator\Regex({ must_match: false, pattern: \'/^[0-9]+$/\' })', '->asString() returns a string representation of the validator');
+$t->is($v->asString(), 'Bundle\sfFormBundle\Validator\Regex({ must_match: false, pattern: \'/^[0-9]+$/\' })', '->asString() returns a string representation of the validator');
 
 // ->getPattern()
 $t->diag('->getPattern()');

@@ -10,10 +10,10 @@
 
 require_once(dirname(__FILE__).'/../bootstrap.php');
 
-use Bundle\FormBundle\Validator\FromDescription;
-use Bundle\FormBundle\Validator\String;
-use Bundle\FormBundle\Validator\Decorator;
-use Bundle\FormBundle\Validator\Integer;
+use Bundle\sfFormBundle\Validator\FromDescription;
+use Bundle\sfFormBundle\Validator\String;
+use Bundle\sfFormBundle\Validator\Decorator;
+use Bundle\sfFormBundle\Validator\Integer;
 
 use Symfony\Components\Yaml\Yaml;
 
@@ -24,33 +24,33 @@ $t = new lime_test(98);
 
 // var_dump($results); die();
 $tests = array(
-  // 'Bundle\FormBundle\Validator\Integer',
-  // 'Bundle\FormBundle\Validator\Integer()',
-  // 'Bundle\\FormBundle\\Validator\\Integer({min: 18})',
-  // 'Bundle\\FormBundle\\Validator\\Integer(  {  min:  18  }  )',
-  // 'Bundle\\FormBundle\\Validator\\Integer({min: 18}, {required: "This is required"})',
-  '(Bundle\\FormBundle\\Validator\\Integer)',
+  // 'Bundle\sfFormBundle\Validator\Integer',
+  // 'Bundle\sfFormBundle\Validator\Integer()',
+  // 'Bundle\\sfFormBundle\\Validator\\Integer({min: 18})',
+  // 'Bundle\\sfFormBundle\\Validator\\Integer(  {  min:  18  }  )',
+  // 'Bundle\\sfFormBundle\\Validator\\Integer({min: 18}, {required: "This is required"})',
+  '(Bundle\\sfFormBundle\\Validator\\Integer)',
   // '
-  //  (Bundle\\FormBundle\\Validator\\Integer)
+  //  (Bundle\\sfFormBundle\\Validator\\Integer)
   // ',
   // '(
-  //   Bundle\\FormBundle\\Validator\\Integer
+  //   Bundle\\sfFormBundle\\Validator\\Integer
   //  )',
   // 
-  // 'Bundle\\FormBundle\\Validator\\Integer and Bundle\\FormBundle\\Validator\\String',
-  // 'Bundle\\FormBundle\\Validator\\Integer or Bundle\\FormBundle\\Validator\\String',
-  // 'Bundle\\FormBundle\\Validator\\Integer and (Bundle\\FormBundle\\Validator\\String or Bundle\\FormBundle\\Validator\\Email)',
+  // 'Bundle\\sfFormBundle\\Validator\\Integer and Bundle\\sfFormBundle\\Validator\\String',
+  // 'Bundle\\sfFormBundle\\Validator\\Integer or Bundle\\sfFormBundle\\Validator\\String',
+  // 'Bundle\\sfFormBundle\\Validator\\Integer and (Bundle\\sfFormBundle\\Validator\\String or Bundle\\sfFormBundle\\Validator\\Email)',
   // 
-  // 'age:Bundle\\FormBundle\\Validator\\Integer',
-  // 'age:Bundle\\FormBundle\\Validator\\Integer()',
-  // 'age:Bundle\\FormBundle\\Validator\\Integer({min: 18})',
-  // 'age:Bundle\\FormBundle\\Validator\\Integer({min: 18}, {required: "This is required"})',
-  // '(age:Bundle\\FormBundle\\Validator\\Integer)',
+  // 'age:Bundle\\sfFormBundle\\Validator\\Integer',
+  // 'age:Bundle\\sfFormBundle\\Validator\\Integer()',
+  // 'age:Bundle\\sfFormBundle\\Validator\\Integer({min: 18})',
+  // 'age:Bundle\\sfFormBundle\\Validator\\Integer({min: 18}, {required: "This is required"})',
+  // '(age:Bundle\\sfFormBundle\\Validator\\Integer)',
   // '
-  //   (age:Bundle\\FormBundle\\Validator\\Integer)
+  //   (age:Bundle\\sfFormBundle\\Validator\\Integer)
   // ',
   // '(
-  //   age:Bundle\\FormBundle\\Validator\\Integer
+  //   age:Bundle\\sfFormBundle\\Validator\\Integer
   //  )',
   // 
   // 'age == password',
@@ -76,46 +76,46 @@ $tests = array(
   // 'age <= password',
   // 'age > password',
   // 
-  // 'age:Bundle\\FormBundle\\Validator\\Integer and password:Bundle\\FormBundle\\Validator\\String',
-  // 'age:Bundle\\FormBundle\\Validator\\Integer and() password:Bundle\\FormBundle\\Validator\\String()',
-  // 'age:Bundle\\FormBundle\\Validator\\Integer and({}, {invalid: "This is invalid."}) password:Bundle\\FormBundle\\Validator\\String({required: true}, {min_length: Min length error message.})',
-  // 'age:Bundle\\FormBundle\\Validator\\Integer and({required: true}, {invalid: "This is invalid."}) password:Bundle\\FormBundle\\Validator\\String',
-  // 'age:Bundle\\FormBundle\\Validator\\Integer and({}) password:Bundle\\FormBundle\\Validator\\String({}, {})',
-  // "age:Bundle\\FormBundle\\Validator\\Integer
+  // 'age:Bundle\\sfFormBundle\\Validator\\Integer and password:Bundle\\sfFormBundle\\Validator\\String',
+  // 'age:Bundle\\sfFormBundle\\Validator\\Integer and() password:Bundle\\sfFormBundle\\Validator\\String()',
+  // 'age:Bundle\\sfFormBundle\\Validator\\Integer and({}, {invalid: "This is invalid."}) password:Bundle\\sfFormBundle\\Validator\\String({required: true}, {min_length: Min length error message.})',
+  // 'age:Bundle\\sfFormBundle\\Validator\\Integer and({required: true}, {invalid: "This is invalid."}) password:Bundle\\sfFormBundle\\Validator\\String',
+  // 'age:Bundle\\sfFormBundle\\Validator\\Integer and({}) password:Bundle\\sfFormBundle\\Validator\\String({}, {})',
+  // "age:Bundle\\sfFormBundle\\Validator\\Integer
   //  and
-  //  password:Bundle\\FormBundle\\Validator\\String",
-  //  '(age:Bundle\\FormBundle\\Validator\\Integer and password:Bundle\\FormBundle\\Validator\\String)',
-  //  'age:Bundle\\FormBundle\\Validator\\Integer or password:Bundle\\FormBundle\\Validator\\String',
+  //  password:Bundle\\sfFormBundle\\Validator\\String",
+  //  '(age:Bundle\\sfFormBundle\\Validator\\Integer and password:Bundle\\sfFormBundle\\Validator\\String)',
+  //  'age:Bundle\\sfFormBundle\\Validator\\Integer or password:Bundle\\sfFormBundle\\Validator\\String',
   //  '
-  //   (age:Bundle\\FormBundle\\Validator\\Integer or password:Bundle\\FormBundle\\Validator\\String)
+  //   (age:Bundle\\sfFormBundle\\Validator\\Integer or password:Bundle\\sfFormBundle\\Validator\\String)
   //  ',
-  //  '(age:Bundle\\FormBundle\\Validator\\Integer or password:Bundle\\FormBundle\\Validator\\String)',
+  //  '(age:Bundle\\sfFormBundle\\Validator\\Integer or password:Bundle\\sfFormBundle\\Validator\\String)',
   //  '(
-  //    age:Bundle\\FormBundle\\Validator\\Integer or password:Bundle\\FormBundle\\Validator\\String
+  //    age:Bundle\\sfFormBundle\\Validator\\Integer or password:Bundle\\sfFormBundle\\Validator\\String
   //   )',
   // '
   //  (
-  //   age:Bundle\\FormBundle\\Validator\\Integer
+  //   age:Bundle\\sfFormBundle\\Validator\\Integer
   //    or
-  //   password:Bundle\\FormBundle\\Validator\\String
+  //   password:Bundle\\sfFormBundle\\Validator\\String
   //  )
   // ',
   // 
   // "
-  //  (first_name:Bundle\\FormBundle\\Validator\\String or age:Bundle\\FormBundle\\Validator\\Integer)
+  //  (first_name:Bundle\\sfFormBundle\\Validator\\String or age:Bundle\\sfFormBundle\\Validator\\Integer)
   //   and
-  //  age:Bundle\\FormBundle\\Validator\\Integer({min: 18}, {required: \"This is required.\"})
+  //  age:Bundle\\sfFormBundle\\Validator\\Integer({min: 18}, {required: \"This is required.\"})
   //   or
   //  (
-  //    age:Bundle\\FormBundle\\Validator\\Integer({max: 18})
+  //    age:Bundle\\sfFormBundle\\Validator\\Integer({max: 18})
   //     and
-  //    is_young:Bundle\\FormBundle\\Validator\\Boolean({required: true})
+  //    is_young:Bundle\\sfFormBundle\\Validator\\Boolean({required: true})
   //  )
   // ",
   // 
-  // 'email:Bundle\\FormBundle\\Validator\\Email and (age:Bundle\\FormBundle\\Validator\\Integer({min: 18}) or (age:Bundle\\FormBundle\\Validator\\Integer({max: 18}) and is_young:Boolean({required: true})))',
-  // '(password == password_bis) and begin_date <= end_date and password:Bundle\\FormBundle\\Validator\\String({min_length: 4, max_length: 18})',
-  // 'countries:Bundle\\FormBundle\\Validator\\Choice({choices: [France, USA, Italy, Spain]}) and password ==({}, {invalid: "Passwords must be the same (%left_field% != %right_field%)"}) password_bis and begin_date <= end_date and password:Bundle\\FormBundle\\Validator\\String({min_length: 4, max_length: 18})',
+  // 'email:Bundle\\sfFormBundle\\Validator\\Email and (age:Bundle\\sfFormBundle\\Validator\\Integer({min: 18}) or (age:Bundle\\sfFormBundle\\Validator\\Integer({max: 18}) and is_young:Boolean({required: true})))',
+  // '(password == password_bis) and begin_date <= end_date and password:Bundle\\sfFormBundle\\Validator\\String({min_length: 4, max_length: 18})',
+  // 'countries:Bundle\\sfFormBundle\\Validator\\Choice({choices: [France, USA, Italy, Spain]}) and password ==({}, {invalid: "Passwords must be the same (%left_field% != %right_field%)"}) password_bis and begin_date <= end_date and password:Bundle\\sfFormBundle\\Validator\\String({min_length: 4, max_length: 18})',
 );
 
 foreach ($tests as $test)

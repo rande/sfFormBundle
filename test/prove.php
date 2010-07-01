@@ -13,18 +13,24 @@ require_once $_src_path.'/Bundle/Lime2Bundle/LimeAutoloader.php';
 LimeAutoloader::enableLegacyMode();
 LimeAutoloader::register();
 
-require_once $_src_path.'/vendor/symfony/src/Symfony/Foundation/ClassLoader.php';
-$loader = new Symfony\Foundation\ClassLoader();
-$loader->registerNamespace('Symfony', $_src_path.'/vendor/symfony/src');
+require_once $_src_path.'/src/Symfony/src/Symfony/Foundation/UniversalClassLoader.php';
+$loader = new Symfony\Foundation\UniversalClassLoader();
+$loader->registerNamespace('Symfony', $_src_path.'/src/Symfony/src');
 $loader->register();
 
 
 $h = new lime_harness(new lime_output_color());
 $h->base_dir = realpath(dirname(__FILE__));
 
-$h->register(Symfony\Framework\WebBundle\Util\Finder::type('file')->prune('fixtures')->name('*Test.php')->in(array(
-  // unit tests
-  $h->base_dir.'/unit',
-)));
+$finder = new Symfony\Components\Finder\Finder();
+$finder = $finder->files()->exclude('fixtures')->name('*Test.php')->in($h->base_dir.'/unit');
+
+$files = array();
+foreach($finder as $file)
+{
+  $files[] = $file->getPathname();
+}
+
+$h->register($files);
 
 exit($h->run() ? 0 : 1);

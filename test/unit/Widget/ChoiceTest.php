@@ -10,10 +10,10 @@
 
 require_once(dirname(__FILE__).'/../bootstrap.php');
 
-use Bundle\FormBundle\Widget\Choice;
-use Bundle\FormBundle\Widget\Schema;
-use Bundle\FormBundle\Widget\SchemaFormatter;
-use Bundle\FormBundle\Tool\Callable;
+use Bundle\sfFormBundle\Widget\Choice;
+use Bundle\sfFormBundle\Widget\Schema;
+use Bundle\sfFormBundle\Widget\SchemaFormatter;
+use Bundle\sfFormBundle\Tool\Callable;
 
 class FormFormatterStub extends SchemaFormatter
 {
@@ -33,13 +33,13 @@ $dom->validateOnParse = true;
 // ->getRenderer()
 $t->diag('->getRenderer()');
 $w = new Choice(array('choices' => array()));
-$t->is(get_class($w->getRenderer()), 'Bundle\FormBundle\Widget\Select', '->getRenderer() guesses the renderer class to use');
+$t->is(get_class($w->getRenderer()), 'Bundle\sfFormBundle\Widget\Select', '->getRenderer() guesses the renderer class to use');
 $w->setOption('multiple', true);
-$t->is(get_class($w->getRenderer()), 'Bundle\FormBundle\Widget\Select', '->getRenderer() guesses the renderer class to use');
+$t->is(get_class($w->getRenderer()), 'Bundle\sfFormBundle\Widget\Select', '->getRenderer() guesses the renderer class to use');
 $w->setOption('expanded', true);
-$t->is(get_class($w->getRenderer()), 'Bundle\FormBundle\Widget\SelectCheckbox', '->getRenderer() guesses the renderer class to use');
+$t->is(get_class($w->getRenderer()), 'Bundle\sfFormBundle\Widget\SelectCheckbox', '->getRenderer() guesses the renderer class to use');
 $w->setOption('multiple', false);
-$t->is(get_class($w->getRenderer()), 'Bundle\FormBundle\Widget\SelectRadio', '->getRenderer() guesses the renderer class to use');
+$t->is(get_class($w->getRenderer()), 'Bundle\sfFormBundle\Widget\SelectRadio', '->getRenderer() guesses the renderer class to use');
 
 class MyWidget extends Choice
 {

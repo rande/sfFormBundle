@@ -12,9 +12,9 @@ require_once(dirname(__FILE__).'/../bootstrap.php');
 
 $t = new lime_test(17);
 
-use Bundle\FormBundle\Validator\Boolean;
-use Bundle\FormBundle\Validator\Error;
-use Bundle\FormBundle\Validator\ErrorSchema;
+use Bundle\sfFormBundle\Validator\Boolean;
+use Bundle\sfFormBundle\Validator\Error;
+use Bundle\sfFormBundle\Validator\ErrorSchema;
 
 
 $v = new Boolean();

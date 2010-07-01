@@ -1,10 +1,10 @@
 <?php
 
-namespace Bundle\FormBundle;
+namespace Bundle\sfFormBundle;
 
-use Bundle\FormBundle\Widget\Form as WidgetForm;
-use Bundle\FormBundle\Widget\Schema as WidgetFormSchema;
-use Bundle\FormBundle\Validator\Error as ValidatorError;
+use Bundle\sfFormBundle\Widget\Form as WidgetForm;
+use Bundle\sfFormBundle\Widget\Schema as WidgetFormSchema;
+use Bundle\sfFormBundle\Validator\Error as ValidatorError;
 
 
 /*

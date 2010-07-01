@@ -10,7 +10,7 @@
 
 require_once(dirname(__FILE__).'/../bootstrap.php');
 
-use Bundle\FormBundle\Widget\InputPassword;
+use Bundle\sfFormBundle\Widget\InputPassword;
 
 $t = new lime_test(3);
 

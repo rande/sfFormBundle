@@ -10,7 +10,7 @@
 
 require_once(dirname(__FILE__).'/../bootstrap.php');
 
-use Bundle\FormBundle\Widget\InputFile;
+use Bundle\sfFormBundle\Widget\InputFile;
 
 $t = new lime_test(1);
 

@@ -10,8 +10,8 @@
 
 require_once(dirname(__FILE__).'/../bootstrap.php');
 
-use Bundle\FormBundle\Validator\DateTime;
-use Bundle\FormBundle\Validator\Date;
+use Bundle\sfFormBundle\Validator\DateTime;
+use Bundle\sfFormBundle\Validator\Date;
 
 $t = new lime_test(4);
 

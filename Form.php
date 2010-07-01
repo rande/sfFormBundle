@@ -8,28 +8,28 @@
  * file that was distributed with this source code.
  */
 
-namespace Bundle\FormBundle;
+namespace Bundle\sfFormBundle;
 
-use Bundle\FormBundle\Field;
-use Bundle\FormBundle\FieldSchema;
-use Bundle\FormBundle\Widget\Form as WidgetForm;
-use Bundle\FormBundle\Widget\Schema as WidgetSchema;
-use Bundle\FormBundle\Widget\InputText as WidgetInputText;
-use Bundle\FormBundle\Widget\InputHidden as WidgetInputHidden;
-use Bundle\FormBundle\Widget\SchemaDecorator as WidgetSchemaDecorator;
-use Bundle\FormBundle\Widget\SchemaForEach as WidgetSchemaForEach;
+use Bundle\sfFormBundle\Field;
+use Bundle\sfFormBundle\FieldSchema;
+use Bundle\sfFormBundle\Widget\Form as WidgetForm;
+use Bundle\sfFormBundle\Widget\Schema as WidgetSchema;
+use Bundle\sfFormBundle\Widget\InputText as WidgetInputText;
+use Bundle\sfFormBundle\Widget\InputHidden as WidgetInputHidden;
+use Bundle\sfFormBundle\Widget\SchemaDecorator as WidgetSchemaDecorator;
+use Bundle\sfFormBundle\Widget\SchemaForEach as WidgetSchemaForEach;
 
 
 
-use Bundle\FormBundle\Validator\Error as ValidatorError;
-use Bundle\FormBundle\Validator\String as ValidatorString;
-use Bundle\FormBundle\Validator\ErrorSchema as ValidatorErrorSchema;
-use Bundle\FormBundle\Validator\Schema as ValidatorSchema;
-use Bundle\FormBundle\Validator\SchemaForEach as ValidatorSchemaForEach;
+use Bundle\sfFormBundle\Validator\Error as ValidatorError;
+use Bundle\sfFormBundle\Validator\String as ValidatorString;
+use Bundle\sfFormBundle\Validator\ErrorSchema as ValidatorErrorSchema;
+use Bundle\sfFormBundle\Validator\Schema as ValidatorSchema;
+use Bundle\sfFormBundle\Validator\SchemaForEach as ValidatorSchemaForEach;
 
-use Bundle\FormBundle\Validator\OrOperator as ValidatorAnd;
-use Bundle\FormBundle\Validator\Base as ValidatorBase;
-use Bundle\FormBundle\Validator\CSRFToken as ValidatorCSRFToken;
+use Bundle\sfFormBundle\Validator\OrOperator as ValidatorAnd;
+use Bundle\sfFormBundle\Validator\Base as ValidatorBase;
+use Bundle\sfFormBundle\Validator\CSRFToken as ValidatorCSRFToken;
 
 
 /**
@@ -95,6 +95,7 @@ class Form implements \ArrayAccess, \Iterator, \Countable
 
     $this->addCSRFProtection($this->localCSRFSecret);
     $this->resetFormFields();
+    
   }
 
   /**
@@ -1086,7 +1087,7 @@ class Form implements \ArrayAccess, \Iterator, \Countable
         $value = $widget instanceof WidgetSchema ? $widget->getDefaults() : $widget->getDefault();
       }
 
-      $class = $widget instanceof WidgetSchema ? 'Bundle\\FormBundle\\FieldSchema' : 'Bundle\\FormBundle\\Field';
+      $class = $widget instanceof WidgetSchema ? 'Bundle\\sfFormBundle\\FieldSchema' : 'Bundle\\sfFormBundle\\Field';
 
       $this->formFields[$name] = new $class($widget, $this->getFormFieldSchema(), $name, $value, $this->errorSchema[$name]);
     }

@@ -10,17 +10,17 @@
 
 require_once(dirname(__FILE__).'/bootstrap.php');
 
-use Bundle\FormBundle\Field;
-use Bundle\FormBundle\FieldSchema;
+use Bundle\sfFormBundle\Field;
+use Bundle\sfFormBundle\FieldSchema;
 
-use Bundle\FormBundle\Widget\Form as WidgetForm;
-use Bundle\FormBundle\Widget\Schema as WidgetFormSchema;
-use Bundle\FormBundle\Widget\InputText as WidgetInputText;
-use Bundle\FormBundle\Widget\InputHidden as WidgetInputHidden;
+use Bundle\sfFormBundle\Widget\Form as WidgetForm;
+use Bundle\sfFormBundle\Widget\Schema as WidgetFormSchema;
+use Bundle\sfFormBundle\Widget\InputText as WidgetInputText;
+use Bundle\sfFormBundle\Widget\InputHidden as WidgetInputHidden;
 
-use Bundle\FormBundle\Validator\Error as ValidatorError;
-use Bundle\FormBundle\Validator\String as ValidatorString;
-use Bundle\FormBundle\Validator\ErrorSchema as ValidatorErrorSchema;
+use Bundle\sfFormBundle\Validator\Error as ValidatorError;
+use Bundle\sfFormBundle\Validator\String as ValidatorString;
+use Bundle\sfFormBundle\Validator\ErrorSchema as ValidatorErrorSchema;
 
 
 

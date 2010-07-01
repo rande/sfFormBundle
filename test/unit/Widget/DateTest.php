@@ -10,9 +10,9 @@
 
 require_once(dirname(__FILE__).'/../bootstrap.php');
 
-use Bundle\FormBundle\Widget\Date;
-use Bundle\FormBundle\Tool\Callable;
-use Bundle\FormBundle\Tool\DomCssSelector;
+use Bundle\sfFormBundle\Widget\Date;
+use Bundle\sfFormBundle\Tool\Callable;
+use Bundle\sfFormBundle\Tool\DomCssSelector;
 
 $t = new lime_test(40);
 

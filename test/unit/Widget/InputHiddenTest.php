@@ -10,7 +10,7 @@
 
 require_once(dirname(__FILE__).'/../bootstrap.php');
 
-use Bundle\FormBundle\Widget\InputHidden;
+use Bundle\sfFormBundle\Widget\InputHidden;
 
 $t = new lime_test(2);
 
